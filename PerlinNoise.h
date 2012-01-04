@@ -1,11 +1,3 @@
-//
-//  PerlinNoise.h
-//  BridgeRunner
-//
-//  Created by Ole Andre Birkedal on 10/2/11.
-//  Copyright 2011 Extab. All rights reserved.
-//
-
 #ifndef BridgeRunner_PerlinNoise_h
 #define BridgeRunner_PerlinNoise_h
 

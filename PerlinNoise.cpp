@@ -1,11 +1,3 @@
-//
-//  PerlinNoise.cpp
-//  BridgeRunner
-//
-//  Created by Ole Andre Birkedal on 10/2/11.
-//  Copyright 2011 Extab. All rights reserved.
-//
-
 #include <iostream>
 #include "PerlinNoise.h"
 
