@@ -14,8 +14,6 @@ PerlinNoise::~PerlinNoise()
 float PerlinNoise::GetNoise( float x )
 {
     float Total = 0.0;
-    float p = 0.25; // Persistence
-    int n = 16; // Number of octaves
     
     for( unsigned int i = 0; i < n; ++i )
     {
