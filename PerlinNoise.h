@@ -1,5 +1,7 @@
 #pragma once
 
+#include <numeric>
+#include <vector>
 #include <cmath>
 
 // 1D Perlin noise class for terrain generation
@@ -11,17 +13,16 @@ public:
 
   float get_noise(float x) const
   {
-    float total = 0.0;
+    std::vector<int> freqs(n);
+    std::iota(freqs.begin(), freqs.end(), 0); // [0, 1, 2, 3, ...]
 
-    for(unsigned int i = 0; i < n; ++i)
-    {
-      unsigned int freqency = 1<<i; // 2^i
-      float amplitude = pow(p, i);
-
-      total += interpolated_noise(x * freqency) * amplitude;
-    }
-
-    return total;
+    return std::accumulate(freqs.begin(), freqs.end(), 0.0,
+                           [&](float acc, int freq)
+                           {
+                             unsigned int freqency = 1<<freq; // 2^i
+                             float amplitude = pow(p, freq);
+                             return acc + interpolated_noise(x * freqency) * amplitude;
+                           });
   }
 
  private:
